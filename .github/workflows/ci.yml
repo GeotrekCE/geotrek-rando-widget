@@ -10,17 +10,34 @@ on:
 
 jobs:
   ci:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/update-cache
       - name: Debug github action ref
         run: |
           echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
           echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+
       - name: Build
         run : npm run build
 
       - name: Test doc build
         run: npm run docs:build
 
+      - name: Run Playwright tests
+        run: |
+          npx playwright test --reporter=playwright-ctrf-json-reporter --trace=retain-on-failure
+          ls -als test-results
+
+      - name: Publish Test Summary Results
+        run: npx github-actions-ctrf ctrf/ctrf-report.json
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: test-results
+          path: |
+            test-results/
+          retention-days: 30
