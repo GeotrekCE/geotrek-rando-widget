@@ -11,6 +11,10 @@
 </p>
 
 <p align="center">
+<a href="https://github.com/GeotrekCE/Geotrek-rando-widget/actions/workflows/ci.yml" rel="nofollow"><img alt="Release" src="https://github.com/GeotrekCE/Geotrek-rando-widget/actions/workflows/ci.yml/badge.svg" style="max-width:100%;"></a>
+</p>
+
+<p align="center">
     <a href="#widget"><b>Widget</b></a>  •  
     <a href="#features"><b>Features</b></a>  • 
     <a href="#test-and-configure-the-widget"><b>Configuration</b></a>  • 

@@ -36,6 +36,8 @@ export const config: Config = {
         globPatterns: ['**/*.{js,css,json,html,ico,png,ttf}', 'assets/contract.svg', 'assets/default-image.svg', 'assets/layers.svg', 'assets/parking.svg'],
       },
       copy: [
+        { src: '**/test/*.html' },
+        { src: '**/test/*.css' },
         {
           src: 'assets/contract.svg',
           dest: 'build/assets/contract.svg',

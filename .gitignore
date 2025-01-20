@@ -31,3 +31,5 @@ docs/.vitepress/dist
 app/
 android/
 ios/
+
+test-results/

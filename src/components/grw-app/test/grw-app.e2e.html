@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Geotrek Rando Widget</title>
+
+    <link rel="stylesheet" href="../../../build/geotrek-rando-widget.css" />
+    <script type="module" src="../../../build/geotrek-rando-widget.esm.js"></script>
+    <script nomodule src="../../../build/geotrek-rando-widget.js"></script>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <grw-app
+      api="https://demo-admin.geotrek.fr/api/v2/"
+      name-layer="IGN"
+      url-layer="https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&FORMAT=image/png&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}"
+      attribution-layer="<a target='_blank' href='https://ign.fr/'>IGN</a>"
+      languages="fr"
+    ></grw-app>
+  </body>
+</html>
